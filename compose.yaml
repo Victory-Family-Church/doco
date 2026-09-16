@@ -8,6 +8,7 @@ x-poll-config: &poll-config
 
 services:
   doco-cd:
+    restart: unless-stopped
     # You can also pin to a specific tag (version)
     # Available tags can be found here: https://github.com/kimdre/doco-cd/pkgs/container/doco-cd
     image: ghcr.io/kimdre/doco-cd:0.118.1
