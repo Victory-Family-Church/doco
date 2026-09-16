@@ -15,15 +15,12 @@ services:
     ports:
       - "9120:9120" # Prometheus metrics
       - "9121:80"
-
     environment:
       TZ: America/New_York
       HTTP_PORT: 80
       SOPS_AGE_KEY_FILE: /run/secrets/sops_age_key
       API_SECRET_FILE: /run/secrets/api_key
       <<: *poll-config  # Uncomment this line to use the poll configuration from above (the `x-poll-config` section).
-    networks: 
-      backbone:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - doco_data:/data
