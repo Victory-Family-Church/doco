@@ -31,7 +31,6 @@ services:
       # retries: 3
     secrets:
       - sops_age_key
-      - git_access_token
       - api_key
 secrets:
   sops_age_key: # Preferably detatch this from any public git repos. This is an immutable mount on every host.
